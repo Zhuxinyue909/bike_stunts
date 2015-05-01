@@ -146,19 +146,19 @@ static void simLoop (int pause)
 	const dReal *a1 = dBodyGetPosition (body[3]);
 	const dReal *a2 = dBodyGetPosition (body[4]);
 	const dReal *a3 = dBodyGetPosition (body[5]);
-	//const dReal *deta= *a2-*a1;
+
 	float tem1=a2[0]-a1[0];
 	float tem2=a2[1]-a1[1];
 	float tem3=a2[2]-a1[2];
 	float tem4=a3[0]-a2[0];
 	float tem5=a3[1]-a2[1];
 	float tem6=a3[2]-a2[2];
-	   dJointSetHinge2Axis1 (joint[0],tem1,tem2,tem3);
-	//dJointSetHinge2Axis1 (joint[1],0,0,1);
-   dJointSetHinge2Axis2 (joint[0],tem4,tem5,tem6);
+	dJointSetHinge2Axis1 (joint[0],tem1,tem2,tem3);
+    dJointSetHinge2Axis2 (joint[0],tem4,tem5,tem6);
     // motor
-	 dJointSetHinge2Param (joint[0],dParamVel2,-speed);
-    dJointSetHinge2Param (joint[0],dParamFMax2,0.1);
+
+	dJointSetHinge2Param (joint[1],dParamVel2,-speed);
+    dJointSetHinge2Param (joint[1],dParamFMax2,0.1);
 
     // steering
     dReal v = steer - dJointGetHinge2Angle1 (joint[0]);

@@ -1,4 +1,4 @@
-﻿生成启动时间为 2015/5/1 14:23:29。
+﻿生成启动时间为 2015/5/1 15:29:44。
      1>项目“C:\Users\lisa\Documents\GitHub\bike_stunts\ode-0.13\build\bike-ode\demo_buggy.vcxproj”在节点 2 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“obj\DebugDoubleDLL\demo_buggy\demo_buggy.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
@@ -26,4 +26,4 @@
 
 生成成功。
 
-已用时间 00:00:00.95
+已用时间 00:00:01.07
