@@ -142,17 +142,6 @@ static void simLoop (int pause)
 {
   int i;
   if (!pause) {
-	  
-	  //Bike Parameters
-
-	  //Alpha :
-	  dReal Alpha = dJointGetHinge2Angle2Rate (joint[1]);
-	  dReal Alpha_d = Alpha*180;
-	  //Theta :
-	  dReal Theta = dJointGetHingeAngle(joint[2]);
-	  dReal Theta_d = Theta*180;
-
-
 	   const dReal *a0 = dBodyGetPosition (body[1]);//self
 	const dReal *a1 = dBodyGetPosition (body[3]);
 	const dReal *a2 = dBodyGetPosition (body[4]);
