@@ -1,5 +1,5 @@
-﻿生成启动时间为 2015/5/1 0:48:54。
-     1>项目“C:\Users\lisa\Desktop\660\authoring tool\project\ode-0.13\build\bike-ode\demo_buggy.vcxproj”在节点 2 上(build 个目标)。
+﻿生成启动时间为 2015/5/1 14:23:29。
+     1>项目“C:\Users\lisa\Documents\GitHub\bike_stunts\ode-0.13\build\bike-ode\demo_buggy.vcxproj”在节点 2 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“obj\DebugDoubleDLL\demo_buggy\demo_buggy.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
@@ -10,7 +10,7 @@
        ManifestResourceCompile:
          所有输出均为最新。
        Link:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\lib\DebugDoubleDLL\demo_buggy.exe" /INCREMENTAL /NOLOGO ..\..\lib\DebugDoubleDLL\ode_doubled.lib ..\..\lib\DebugDoubleDLL\drawstuffd.lib user32.lib winmm.lib gdi32.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"obj\DebugDoubleDLL\demo_buggy\demo_buggy.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\lisa\Desktop\660\authoring tool\project\ode-0.13\lib\DebugDoubleDLL\demo_buggy.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /ENTRY:"mainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\lib\DebugDoubleDLL\demo_buggy.lib" /MACHINE:X86 obj\DebugDoubleDLL\demo_buggy\resources.res
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\lib\DebugDoubleDLL\demo_buggy.exe" /INCREMENTAL /NOLOGO ..\..\lib\DebugDoubleDLL\ode_doubled.lib ..\..\lib\DebugDoubleDLL\drawstuffd.lib user32.lib winmm.lib gdi32.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"obj\DebugDoubleDLL\demo_buggy\demo_buggy.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\lisa\Documents\GitHub\bike_stunts\ode-0.13\lib\DebugDoubleDLL\demo_buggy.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /ENTRY:"mainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\lib\DebugDoubleDLL\demo_buggy.lib" /MACHINE:X86 obj\DebugDoubleDLL\demo_buggy\resources.res
          obj\DebugDoubleDLL\demo_buggy\demo_buggy.exe.embed.manifest.res
          obj\DebugDoubleDLL\demo_buggy\demo_buggy.obj
        Manifest:
@@ -18,12 +18,12 @@
          所有输出均为最新。
        LinkEmbedManifest:
          所有输出均为最新。
-         demo_buggy.vcxproj -> C:\Users\lisa\Desktop\660\authoring tool\project\ode-0.13\build\bike-ode\..\..\lib\DebugDoubleDLL\demo_buggy.exe
+         demo_buggy.vcxproj -> C:\Users\lisa\Documents\GitHub\bike_stunts\ode-0.13\build\bike-ode\..\..\lib\DebugDoubleDLL\demo_buggy.exe
        FinalizeBuildStatus:
          正在删除文件“obj\DebugDoubleDLL\demo_buggy\demo_buggy.unsuccessfulbuild”。
          正在对“obj\DebugDoubleDLL\demo_buggy\demo_buggy.lastbuildstate”执行 Touch 任务。
-     1>已完成生成项目“C:\Users\lisa\Desktop\660\authoring tool\project\ode-0.13\build\bike-ode\demo_buggy.vcxproj”(build 个目标)的操作。
+     1>已完成生成项目“C:\Users\lisa\Documents\GitHub\bike_stunts\ode-0.13\build\bike-ode\demo_buggy.vcxproj”(build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:00.71
+已用时间 00:00:00.95
