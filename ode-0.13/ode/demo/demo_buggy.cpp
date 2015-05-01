@@ -42,7 +42,7 @@
 	// chassis length
 #define WIDTH 0.03
 #define HEIGHT 0.03	// chassis height
-#define WHEEL_WIDTH 0.3
+#define WHEEL_WIDTH 0.03
 #define RADIUS 0.18	// wheel radius
 #define STARTZ 0.18	// starting height of chassis
 #define CMASS 0.1		// chassis mass
@@ -83,13 +83,13 @@ static void nearCallback (void *data, dGeomID o1, dGeomID o2){
   n = dCollide (o1,o2,N,&contact[0].geom,sizeof(dContact));
   if (n > 0) {
     for (i=0; i<n; i++) {
-      contact[i].surface.mode = dContactSlip1 | dContactSlip2 |
-	dContactSoftERP | dContactSoftCFM | dContactApprox1;
-      contact[i].surface.mu = dInfinity;
-      contact[i].surface.slip1 = 0.1;
-      contact[i].surface.slip2 = 0.1;
-      contact[i].surface.soft_erp = 0.5;
-      contact[i].surface.soft_cfm = 0.3;
+      contact[i].surface.mode = dContactSlip1 | dContactSlip2 |dContactApprox1;
+	//dContactSoftERP | dContactSoftCFM | dContactApprox1;
+      contact[i].surface.mu = 3;//dInfinity;
+      contact[i].surface.slip1 = 1;
+      contact[i].surface.slip2 = 1;
+      //contact[i].surface.soft_erp = 0.5;
+     // contact[i].surface.soft_cfm = 0.3;
       dJointID c = dJointCreateContact (world,contactgroup,&contact[i]);
       dJointAttach (c,
 		    dGeomGetBody(contact[i].geom.g1),
@@ -157,18 +157,18 @@ static void simLoop (int pause)
     dJointSetHinge2Axis2 (joint[0],tem4,tem5,tem6);
     // motor
 
-	dJointSetHinge2Param (joint[1],dParamVel2,-speed);
-    dJointSetHinge2Param (joint[1],dParamFMax2,0.1);
+	dJointSetHinge2Param (joint[0],dParamVel2,-speed);
+    dJointSetHinge2Param (joint[0],dParamFMax2,0.1);
 
     // steering
-    dReal v = steer - dJointGetHinge2Angle1 (joint[0]);
+    dReal v = steer - dJointGetHingeAngle (joint[2]);
     if (v > 0.1) v = 0.1;
     if (v < -0.1) v = -0.1;
     v *= 10.0;
     dJointSetHingeParam (joint[2],dParamVel,v);
     dJointSetHingeParam (joint[2],dParamFMax,0.2);
-    dJointSetHingeParam (joint[2],dParamLoStop,-0.75);
-    dJointSetHingeParam (joint[2],dParamHiStop,0.75);
+    dJointSetHingeParam (joint[2],dParamLoStop,-1.75);
+    dJointSetHingeParam (joint[2],dParamHiStop,1.75);
     dJointSetHingeParam (joint[2],dParamFudgeFactor,0.1);
 
     dSpaceCollide (space,0,&nearCallback);
@@ -402,7 +402,7 @@ int main (int argc, char **argv)
   ground_box = dCreateBox (space,2,1.5,1);
   dMatrix3 R;
   dRFromAxisAndAngle (R,0,1,0,-0.15);
-  dGeomSetPosition (ground_box,2,0,-0.34);
+  dGeomSetPosition (ground_box,-20,0,-0.34);
   dGeomSetRotation (ground_box,R);
 
   // run simulation
