@@ -1,0 +1,36 @@
+﻿生成启动时间为 2015/4/16 20:50:50。
+     1>项目“C:\Users\lisa\Desktop\660\authoring tool\project\ode-0.13\build\vs2010\drawstuff.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“obj\DebugDoubleDLL\drawstuff\drawstuff.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\include /I..\..\ode\src /ZI /nologo /W3 /WX- /Od /Oy- /D _MT /D _DEBUG /D dIDEDOUBLE /D CCD_IDEDOUBLE /D WIN32 /D _CRT_SECURE_NO_DEPRECATE /D _USE_MATH_DEFINES /D DS_DLL /D USRDLL /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"obj\DebugDoubleDLL\drawstuff\\" /Fd"obj\DebugDoubleDLL\drawstuff\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\drawstuff\src\drawstuff.cpp ..\..\drawstuff\src\windows.cpp
+         windows.cpp
+         drawstuff.cpp
+         正在生成代码...
+       ResourceCompile:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _MT /D _DEBUG /D dIDEDOUBLE /D CCD_IDEDOUBLE /D WIN32 /D _CRT_SECURE_NO_DEPRECATE /D _USE_MATH_DEFINES /D DS_DLL /D USRDLL /l"0x0409" /I..\..\include /I..\..\ode\src /nologo /fo"obj\DebugDoubleDLL\drawstuff\resources.res" ..\..\drawstuff\src\resources.rc 
+       ManifestResourceCompile:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"obj\DebugDoubleDLL\drawstuff\drawstuffd.dll.embed.manifest.res" obj\DebugDoubleDLL\drawstuff\drawstuffd_manifest.rc 
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\lib\DebugDoubleDLL\drawstuffd.dll" /INCREMENTAL /NOLOGO user32.lib opengl32.lib glu32.lib winmm.lib gdi32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"obj\DebugDoubleDLL\drawstuff\drawstuffd.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\lisa\Desktop\660\authoring tool\project\ode-0.13\lib\DebugDoubleDLL\drawstuffd.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\lib\DebugDoubleDLL\drawstuffd.lib" /MACHINE:X86 /DLL obj\DebugDoubleDLL\drawstuff\resources.res
+         obj\DebugDoubleDLL\drawstuff\drawstuffd.dll.embed.manifest.res
+         obj\DebugDoubleDLL\drawstuff\drawstuff.obj
+         obj\DebugDoubleDLL\drawstuff\windows.obj
+            正在创建库 ..\..\lib\DebugDoubleDLL\drawstuffd.lib 和对象 ..\..\lib\DebugDoubleDLL\drawstuffd.exp
+       Manifest:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"obj\DebugDoubleDLL\drawstuff\drawstuffd.dll.embed.manifest" /manifest obj\DebugDoubleDLL\drawstuff\drawstuffd.dll.intermediate.manifest
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"obj\DebugDoubleDLL\drawstuff\drawstuffd.dll.embed.manifest.res" obj\DebugDoubleDLL\drawstuff\drawstuffd_manifest.rc 
+       LinkEmbedManifest:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\lib\DebugDoubleDLL\drawstuffd.dll" /INCREMENTAL /NOLOGO user32.lib opengl32.lib glu32.lib winmm.lib gdi32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"obj\DebugDoubleDLL\drawstuff\drawstuffd.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\lisa\Desktop\660\authoring tool\project\ode-0.13\lib\DebugDoubleDLL\drawstuffd.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\lib\DebugDoubleDLL\drawstuffd.lib" /MACHINE:X86 /DLL obj\DebugDoubleDLL\drawstuff\resources.res
+         obj\DebugDoubleDLL\drawstuff\drawstuffd.dll.embed.manifest.res
+         obj\DebugDoubleDLL\drawstuff\drawstuff.obj
+         obj\DebugDoubleDLL\drawstuff\windows.obj
+         drawstuff.vcxproj -> C:\Users\lisa\Desktop\660\authoring tool\project\ode-0.13\build\vs2010\..\..\lib\DebugDoubleDLL\drawstuffd.dll
+       FinalizeBuildStatus:
+         正在删除文件“obj\DebugDoubleDLL\drawstuff\drawstuff.unsuccessfulbuild”。
+         正在对“obj\DebugDoubleDLL\drawstuff\drawstuff.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\Users\lisa\Desktop\660\authoring tool\project\ode-0.13\build\vs2010\drawstuff.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.12

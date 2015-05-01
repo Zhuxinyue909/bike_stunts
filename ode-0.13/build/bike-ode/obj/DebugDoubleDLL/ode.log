@@ -1,0 +1,21 @@
+﻿生成启动时间为 2015/4/16 20:51:06。
+     1>项目“C:\Users\lisa\Desktop\660\authoring tool\project\ode-0.13\build\vs2010\ode.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“obj\DebugDoubleDLL\ode.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         所有输出均为最新。
+         所有输出均为最新。
+       ManifestResourceCompile:
+         所有输出均为最新。
+       Link:
+         所有输出均为最新。
+       Manifest:
+         所有输出均为最新。
+       FinalizeBuildStatus:
+         正在删除文件“obj\DebugDoubleDLL\ode.unsuccessfulbuild”。
+         正在对“obj\DebugDoubleDLL\ode.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\Users\lisa\Desktop\660\authoring tool\project\ode-0.13\build\vs2010\ode.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.22
