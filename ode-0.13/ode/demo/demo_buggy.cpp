@@ -49,6 +49,7 @@
 #define WMASS 2	// wheel mass
 #define BAR_LEN 0.45
 #define pi 3.1415
+#define time_step 0.04
 
 // dynamics and collision objects (chassis, 3 wheels, environment)
 
@@ -66,9 +67,7 @@ static dGeomID ground_box;
 
 // things that the user controls
 
-static dReal speed=0,steer=0;	// user commands
-
-
+static dReal speed=0.2,steer=0;	// user commands
 
 static void nearCallback (void *data, dGeomID o1, dGeomID o2){
   int i,n;
@@ -110,6 +109,7 @@ static void start(){
 	  "\t' ' to reset speed and steering.\n"
 	  "\t'1' to save the current state to 'state.dif'.\n");
 }
+bool UpWard = false;
 static void command (int cmd){
   switch (cmd) {
   case 'a': case 'A':
@@ -119,15 +119,19 @@ static void command (int cmd){
     speed -= 0.3;
     break;
   case ',':
-    steer -= 0.5;
+    steer -= 0.1;
     break;
   case '.':
-    steer += 0.5;
+    steer += 0.1;
     break;
   case ' ':
     speed = 0;
     steer = 0;
     break;
+  case 'u':
+	  UpWard = true;
+	  dBodyAddForce(body[4],0.0, 1.0, 0.0);
+	  break;
   case '1': {
       FILE *f = fopen ("state.dif","wt");
       if (f) {
@@ -138,10 +142,119 @@ static void command (int cmd){
   }
 }
 
+bool ToAim = true;
+bool BackAng = false;
+dReal Aim = M_PI/3;
+//!!!!!!!!!!!Behavior Simulation
+    //State vector dimension: 4
+    /*
+  *	State Vector: 4 dimensions
+  *  0 : position in local coordinates. Useless.
+  *  1 : orientation angle in global coordinates.
+  *  2 : velocity in local coordinates.
+  *  3 : angular velocity in global coordinates.
+  */
+dReal thetad = 0;
+dReal vd = 0;
+dReal theta = 0;
+dReal state[4] = {0,0,0,0};
+dReal tau = 0;
+dReal thetaDDot = 0;
+dReal thetaDot = 0;
+//consts
+dReal Kv1 = 32;
+dReal Kp1 = 256;
+dReal Kt1 = 0;
+void Seek()
+{
+	//Seek()
+	const dReal * goal = dGeomGetPosition(ground_box);
+	const dReal * FPos = dBodyGetPosition(body[1]);
+	const dReal * FVel = dBodyGetLinearVel(body[1]);
+
+	dReal e[2];
+	e[0] = goal[0] - FPos[0];
+	e[1] = goal[1] - FPos[1];
+
+	dReal v[2];
+	v[0] = FVel[0];
+	v[1] = FVel[1];
+
+	dReal dist = sqrt(e[0]*e[0]+e[1]*e[1]);
+	dReal _v_ = sqrt(v[0]*v[0]+v[1]*v[1]);
+	if(_v_==0)
+	{
+		thetad = 0;
+		return;
+	}
+	float ex = (e[0]*v[0]+e[1]*v[1])/_v_;
+	float ey2 = e[0]*e[0]+e[1]*e[1] - ex*ex;
+	if(ey2<0)
+	{
+		thetad = 0;
+		return;
+	}
+
+	float ey = sqrt(ey2);
+	thetad = atan2(e[1],e[0]);
+	//thetad = atan2(ey,ex);
+	dReal theta;
+	theta = atan2(v[1],v[0]);
+
+	dReal the_D = thetad*180/M_PI;
+	dReal The = theta*180/M_PI;
+
+	float thetaDot = state[3];
+	//theta = 0;
+	tau =  ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad);
+	dReal MaxTau = 0.05;
+	if(tau>MaxTau) tau = MaxTau;
+	if(tau<-MaxTau) tau = -MaxTau;
+	state[3] = tau;
+	tau*=time_step;
+	steer += tau;
+
+	//printf("%d\n",thetad);
+}
+void Control()
+{
+	float theta = state[1];
+	float thetaDot = state[3];
+	if(thetad==NULL)
+		thetad = 0;
+	tau =  ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad);
+	dReal MaxTau = 0.001;
+	if(tau>MaxTau) tau = MaxTau;
+	if(tau<-MaxTau) tau = -MaxTau;
+}
+void Act()
+{
+	//FindDeriv()
+	thetaDDot = tau;		//deriv 3
+	thetaDot = state[3] ;	//deriv 1
+	//UpdateState()
+	state[1] += thetaDot*time_step;
+	state[3] += thetaDDot*time_step;
+	
+	steer += thetaDot*time_step; 
+	//steer = thetaDot*time_step;
+	const dReal * FVel = dBodyGetLinearVel(body[1]);
+
+	dReal v[2];
+	v[0] = FVel[0];
+	v[1] = FVel[1];
+
+	state[1] = atan2(v[1],v[0]);
+
+
+}
+
+
 static void simLoop (int pause)
 {
   int i;
   if (!pause) {
+
 	   const dReal *a0 = dBodyGetPosition (body[1]);//self
 	const dReal *a1 = dBodyGetPosition (body[3]);
 	const dReal *a2 = dBodyGetPosition (body[4]);
@@ -157,10 +270,49 @@ static void simLoop (int pause)
     dJointSetHinge2Axis2 (joint[0],tem4,tem5,tem6);
     // motor
 
-	dJointSetHinge2Param (joint[0],dParamVel2,-speed);
+	dJointSetHinge2Param (joint[0],dParamVel2,speed);
     dJointSetHinge2Param (joint[0],dParamFMax2,0.1);
-
+	dReal Aim = M_PI/3;
     // steering
+	int a;
+	a = 0;
+	/*
+	if(ToAim)
+	{
+		if(!BackAng)
+		{
+			steer+=time_step*0.01;
+			if(steer>=Aim)
+				BackAng=true;
+			else
+				BackAng=false;
+		}
+		else
+		{
+			steer-=time_step*0.01;
+			if(steer<=0)
+			{
+				ToAim = false;
+				BackAng = false;
+			}
+		}
+	}*/
+	const dReal * Vel = dBodyGetLinearVel(body[1]);
+	dReal _Vel_ = sqrt(Vel[0]*Vel[0]+Vel[1]*Vel[1]);
+
+
+	if(speed>0||_Vel_<=0){
+		Seek();
+		//Control();
+		//Act();
+	}
+	else
+	{
+		//speed = 0;
+		//steer = 0;
+	}
+
+
     dReal v = steer - dJointGetHingeAngle (joint[2]);
     if (v > 0.1) v = 0.1;
     if (v < -0.1) v = -0.1;
@@ -172,7 +324,7 @@ static void simLoop (int pause)
     dJointSetHingeParam (joint[2],dParamFudgeFactor,0.1);
 
     dSpaceCollide (space,0,&nearCallback);
-    dWorldStep (world,0.05);
+    dWorldStep (world,time_step);
 
     // remove all contact joints
     dJointGroupEmpty (contactgroup);
@@ -211,7 +363,6 @@ static void simLoop (int pause)
 	  dJointGetHingeAngleRate (joint[2]));
   */
 }
-
 
 int main (int argc, char **argv)
 {
@@ -402,7 +553,7 @@ int main (int argc, char **argv)
   ground_box = dCreateBox (space,2,1.5,1);
   dMatrix3 R;
   dRFromAxisAndAngle (R,0,1,0,-0.15);
-  dGeomSetPosition (ground_box,-20,0,-0.34);
+  dGeomSetPosition (ground_box,100,4,-0.34);
   dGeomSetRotation (ground_box,R);
 
   // run simulation
