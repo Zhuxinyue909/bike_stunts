@@ -1,29 +1,32 @@
-﻿Build started 5/4/2015 4:33:03 PM.
-     1>Project "C:\Users\zammie\Desktop\bike_stunts\ode-0.13\build\bike-ode\demo_buggy.vcxproj" on node 2 (build target(s)).
+﻿生成启动时间为 2015/5/5 15:50:56。
+     1>项目“C:\Users\lisa\Documents\GitHub\bike_stunts\ode-0.13\build\bike-ode\demo_buggy.vcxproj”在节点 4 上(rebuild 个目标)。
      1>InitializeBuildStatus:
-         Touching "obj\DebugDoubleDLL\demo_buggy\demo_buggy.unsuccessfulbuild".
+         正在创建“obj\DebugDoubleDLL\demo_buggy\demo_buggy.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
          c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\include /I..\..\ode\src /ZI /nologo /W3 /WX- /Od /Oy- /D _MT /D _DEBUG /D dIDEDOUBLE /D CCD_IDEDOUBLE /D WIN32 /D _CRT_SECURE_NO_DEPRECATE /D _USE_MATH_DEFINES /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"obj\DebugDoubleDLL\demo_buggy\\" /Fd"obj\DebugDoubleDLL\demo_buggy\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\ode\demo\demo_buggy.cpp
          demo_buggy.cpp
        ResourceCompile:
-         All outputs are up-to-date.
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _MT /D _DEBUG /D dIDEDOUBLE /D CCD_IDEDOUBLE /D WIN32 /D _CRT_SECURE_NO_DEPRECATE /D _USE_MATH_DEFINES /l"0x0409" /I..\..\include /I..\..\ode\src /nologo /fo"obj\DebugDoubleDLL\demo_buggy\resources.res" ..\..\drawstuff\src\resources.rc 
        ManifestResourceCompile:
-         All outputs are up-to-date.
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"obj\DebugDoubleDLL\demo_buggy\demo_buggy.exe.embed.manifest.res" obj\DebugDoubleDLL\demo_buggy\demo_buggy_manifest.rc 
        Link:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\lib\DebugDoubleDLL\demo_buggy.exe" /INCREMENTAL /NOLOGO ..\..\lib\DebugDoubleDLL\ode_doubled.lib ..\..\lib\DebugDoubleDLL\drawstuffd.lib user32.lib winmm.lib gdi32.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"obj\DebugDoubleDLL\demo_buggy\demo_buggy.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\zammie\Desktop\bike_stunts\ode-0.13\lib\DebugDoubleDLL\demo_buggy.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /ENTRY:"mainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\lib\DebugDoubleDLL\demo_buggy.lib" /MACHINE:X86 obj\DebugDoubleDLL\demo_buggy\resources.res
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\lib\DebugDoubleDLL\demo_buggy.exe" /INCREMENTAL /NOLOGO ..\..\lib\DebugDoubleDLL\ode_doubled.lib ..\..\lib\DebugDoubleDLL\drawstuffd.lib user32.lib winmm.lib gdi32.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"obj\DebugDoubleDLL\demo_buggy\demo_buggy.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\lisa\Documents\GitHub\bike_stunts\ode-0.13\lib\DebugDoubleDLL\demo_buggy.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /ENTRY:"mainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\lib\DebugDoubleDLL\demo_buggy.lib" /MACHINE:X86 obj\DebugDoubleDLL\demo_buggy\resources.res
          obj\DebugDoubleDLL\demo_buggy\demo_buggy.exe.embed.manifest.res
          obj\DebugDoubleDLL\demo_buggy\demo_buggy.obj
        Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"obj\DebugDoubleDLL\demo_buggy\demo_buggy.exe.embed.manifest" /manifest obj\DebugDoubleDLL\demo_buggy\demo_buggy.exe.intermediate.manifest
-         All outputs are up-to-date.
+         正在删除文件“obj\DebugDoubleDLL\demo_buggy\demo_buggy.exe.embed.manifest”。
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"obj\DebugDoubleDLL\demo_buggy\demo_buggy.exe.embed.manifest" /manifest obj\DebugDoubleDLL\demo_buggy\demo_buggy.exe.intermediate.manifest
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"obj\DebugDoubleDLL\demo_buggy\demo_buggy.exe.embed.manifest.res" obj\DebugDoubleDLL\demo_buggy\demo_buggy_manifest.rc 
        LinkEmbedManifest:
-         All outputs are up-to-date.
-         demo_buggy.vcxproj -> C:\Users\zammie\Desktop\bike_stunts\ode-0.13\build\bike-ode\..\..\lib\DebugDoubleDLL\demo_buggy.exe
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\lib\DebugDoubleDLL\demo_buggy.exe" /INCREMENTAL /NOLOGO ..\..\lib\DebugDoubleDLL\ode_doubled.lib ..\..\lib\DebugDoubleDLL\drawstuffd.lib user32.lib winmm.lib gdi32.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"obj\DebugDoubleDLL\demo_buggy\demo_buggy.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\lisa\Documents\GitHub\bike_stunts\ode-0.13\lib\DebugDoubleDLL\demo_buggy.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /ENTRY:"mainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\lib\DebugDoubleDLL\demo_buggy.lib" /MACHINE:X86 obj\DebugDoubleDLL\demo_buggy\resources.res
+         obj\DebugDoubleDLL\demo_buggy\demo_buggy.exe.embed.manifest.res
+         obj\DebugDoubleDLL\demo_buggy\demo_buggy.obj
+         demo_buggy.vcxproj -> C:\Users\lisa\Documents\GitHub\bike_stunts\ode-0.13\build\bike-ode\..\..\lib\DebugDoubleDLL\demo_buggy.exe
        FinalizeBuildStatus:
-         Deleting file "obj\DebugDoubleDLL\demo_buggy\demo_buggy.unsuccessfulbuild".
-         Touching "obj\DebugDoubleDLL\demo_buggy\demo_buggy.lastbuildstate".
-     1>Done Building Project "C:\Users\zammie\Desktop\bike_stunts\ode-0.13\build\bike-ode\demo_buggy.vcxproj" (build target(s)).
+         正在删除文件“obj\DebugDoubleDLL\demo_buggy\demo_buggy.unsuccessfulbuild”。
+         正在对“obj\DebugDoubleDLL\demo_buggy\demo_buggy.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\Users\lisa\Documents\GitHub\bike_stunts\ode-0.13\build\bike-ode\demo_buggy.vcxproj”(rebuild 个目标)的操作。
 
-Build succeeded.
+生成成功。
 
-Time Elapsed 00:00:00.56
+已用时间 00:00:01.33

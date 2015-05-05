@@ -24,4 +24,7 @@
       <Filter>drawstuff\src</Filter>
     </ResourceCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="define.h" />
+  </ItemGroup>
 </Project>

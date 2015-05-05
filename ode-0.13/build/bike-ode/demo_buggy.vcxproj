@@ -398,6 +398,9 @@
   <ItemGroup>
     <ResourceCompile Include="..\..\drawstuff\src\resources.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="define.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
